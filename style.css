@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body
+{
+    background-color: rgb(29, 29, 29);
+    display: flex;
+    justify-content: center;
+    cursor: none;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+a, button {
+    cursor: none; /* or 'auto' */
+}
+.main-wrapper
+{
+    margin-top: 5%;
+    bottom: 0;
+    left: 0;
+    height: 85vh;
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+@media screen and (max-width: 1100px) {
+    .main-wrapper {
+        flex-direction: column;
+        height: 100vh;
+        width: 90%;
+        margin-top: 25%;
+        margin-bottom: 10%;
+    } 
+    #circle {
+        display: none;
+    }
+    #card-display
+    {
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-bar 
+    {
+      display: none;
+    }
+    .main-wrapper{
+      height: 100vh;
+    }
+}  
+
+.nav-bar{
+    position: fixed;
+    width: 65%;
+    margin-top: 3%;
+    flex-direction: row;
+}
+.logo
+{
+    width: 3%;
+    justify-content: left;
+}
+.nav-bar-buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.nav-bar-buttons a{
+  display: flex;
+  justify-content: right;
+  width: 5%;
+  height: 30px;
+  transform: translate(0%,-60%);
+  transition: height 0.3s ease-in-out;
+}
+.nav-bar-buttons a:hover{
+  height: 40px;
+}
+#circle {
+    width: 25px;
+    height: 25px;
+    background-color: rgb(109, 109, 109);
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    transition: transform 0.2s ease-in-out;
+
+    z-index: 900;
+    pointer-events: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size:2.5px;
+  }
+
+  #gradient
+  {
+    width:50%;
+    height: 50%;
+    background-color: rgba(184, 247, 255, 0.164);
+    opacity: 15%;
+    position: fixed;
+
+    top: 25%;
+
+    filter: blur(200px);
+
+    transition: filter .2s ease-out;
+  }
+
+@keyframes reappear {
+    from {
+      top: 0px;
+    }
+    to {
+      top: -50px;
+    }
+  }
+  
+  .black-screen
+  {
+    background-color: black;
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    transform: translate(0,-40%);
+    opacity: 0%;
+    transition: opacity 0.3s ease-out;
+  }
+
+  body #card-display {
+    display: flex;
+    position: relative;
+    z-index: 2;
+  }
+  body #card-display.transition {
+    transition: transform 500ms;
+  }
+  body #card-display .card-wrapper {
+    background-color: transparent;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    position: relative;
+    transition: transform 250ms;
+    transform: scale(0.9);
+  }
+  
+  body #card-display .card-wrapper:hover {
+    transform: scale(1);
+  }
+  .card-content img {
+    transition: transform 1s ease-out;
+  }
+  body #card-display .card-wrapper:hover .card-content img {
+    transform: scale(1.1);
+  }  
+
+  body #card-display .card-wrapper:hover   .black-screen {
+    opacity: 50%;
+  }  
+
+  body #card-display .card-wrapper .card {
+    background-color: #141414;
+    border-radius: inherit;
+    box-shadow: 0px 0px 40px 10px rgba(0, 0, 0, 0.3);
+    height: 500px;
+    position: relative;
+    width: 500px;
+    z-index: 2;
+
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+ 
+  }
+  #fps-engine 
+  {
+    background-image: url("img/fps-engine.png");
+    background-size: 220%;
+    background-position: bottom;
+  }
+  body #card-display .card-wrapper:hover #fps-engine {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  .card .card-content
+  {
+
+    display: flex;
+    justify-content: center;
+    padding-top: 45%;
+
+    width: 50%;
+    height: 10%;
+  }
+
+  #bullet-hell-engine 
+  {
+    background-image: url("img/BulletHellEngine.png");
+    background-size: 220%;
+    background-position: center;
+  }
+  #d-platformer-engine
+  {
+    background-image: url("img/2d-engine.png");
+    background-size: 200%;
+    background-position: center;
+  }
+  @media (max-width: 900px) {
+    body #card-display .card-wrapper:hover {
+        transform: scale(.85);
+    }
+
+  }
+  @media (max-width: 900px) {
+    body #card-display .card-wrapper .card {
+      height: 400px;
+      width: 400px;
+    }
+
+  }
+
+  @media (max-width: 1700px) {
+    @keyframes reappear {
+      from {
+        top: 0px;
+      }
+      to {
+        top: -35px;
+      }
+    }
+
+  }
