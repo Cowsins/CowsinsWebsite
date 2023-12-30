@@ -195,7 +195,23 @@ a, button {
     transition: transform 250ms;
     transform: scale(0.9);
   }
-  
+
+  .aclaration
+  {
+    position: fixed; bottom: 2%; background-color: rgba(0, 0, 0, 0.185); width: 90%; padding: 10px; border-radius: 10px;   backdrop-filter: blur(10px); color: white; 
+  }
+  .aclaration-fps-engine
+  {
+    display: none;
+  }
+  .aclaration-2d
+  {
+    display: none;
+  }
+  .aclaration-bullet
+  {
+    display: none;
+  }
   body #card-display .card-wrapper:hover {
     transform: scale(1);
   }
@@ -209,7 +225,15 @@ a, button {
   body #card-display .card-wrapper:hover   .black-screen {
     opacity: 50%;
   }  
-
+  .card-wrapper-fps-engine:hover .aclaration-fps-engine {
+    display: block;
+  }  
+  .card-wrapper-2d:hover .aclaration-2d {
+    display: block;
+  }  
+  .card-wrapper-bullet:hover .aclaration-bullet {
+    display: block;
+  }  
   body #card-display .card-wrapper .card {
     background-color: #141414;
     border-radius: inherit;
@@ -273,10 +297,7 @@ a, button {
     overflow-y: auto; /* Add this line to enable vertical scrolling */
   }
   
-  .reviews-container h5
-  {
-    color: white;
-  }
+
   @media (max-width: 900px) {
     body #card-display .card-wrapper:hover {
         transform: scale(.85);
@@ -290,7 +311,7 @@ a, button {
     }
     .logo
     {
-        width: 10%;
+        width: 17%;
     }
     .h1title  {
       font-size: 1.5rem;
