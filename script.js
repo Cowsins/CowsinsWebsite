@@ -80,8 +80,8 @@ const DOM = {
   const gradient = document.getElementById("gradient");
 
 document.addEventListener("mousemove", (event) => {
-  const x = event.clientX;
-  const y = event.clientY;
+  const x = event.pageX;
+  const y = event.pageY;
 
   circle.style.left = x + "px";
   circle.style.top = y + "px";

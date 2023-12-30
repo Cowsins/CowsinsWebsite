@@ -4,7 +4,9 @@ body
 {
     background-color: rgb(29, 29, 29);
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     cursor: none;
     font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
@@ -14,16 +16,43 @@ a, button {
 }
 .main-wrapper
 {
-    margin-top: 5%;
     bottom: 0;
     left: 0;
-    height: 85vh;
-    width: 65%;
+    height: 70vh;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+
+.h1title  {
+  width: 100%;
+  height: 100%;
+  margin-top: 7%;
+  font-size: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 1;
+  font-weight: bold;
+}
+.gradient-text
+{
+  background-image: linear-gradient(to top, #7b69a5, #ffffff); /* Replace with your preferred gradient colors */
+  -webkit-background-clip: text; /* For Safari/Chrome */
+  background-clip: text; /* Standard property */
+  color: transparent; /* Set text color to transparent */
+  display: flex; flex-direction: column; width: 60%; align-items: center;
+}
+.h1title h5
+{
+  font-size: 1.5rem;
+  width: 70%;
+  height: 100%;
+  margin-top: 0;
 }
 
 
@@ -45,40 +74,49 @@ a, button {
     }
     .nav-bar 
     {
-      display: none;
+      width: 95%;
     }
     .main-wrapper{
       height: 100vh;
+      margin-top: 50%;
     }
+
 }  
 
 .nav-bar{
-    position: fixed;
-    width: 65%;
-    margin-top: 3%;
-    flex-direction: row;
+  position: fixed;
+  top: 0;
+  background-color: #25252573;
+  backdrop-filter: blur(10px); 
+  padding: 15px;
+  border-radius: 20px;
+  width: 75%;
+  margin-top: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  z-index: 999;
 }
 .logo
 {
     width: 3%;
-    justify-content: left;
 }
 .nav-bar-buttons{
     display: flex;
-    flex-direction: row;
+    width: 50%;
     justify-content: right;
 }
 
 .nav-bar-buttons a{
   display: flex;
-  justify-content: right;
-  width: 5%;
+  transition: transform 0.3s ease-in-out;
+  margin-left: 20px;
+}
+.nav-bar-buttons img{
   height: 30px;
-  transform: translate(0%,-60%);
-  transition: height 0.3s ease-in-out;
 }
 .nav-bar-buttons a:hover{
-  height: 40px;
+  transform: translate(0%,-30%);
 }
 #circle {
     width: 25px;
@@ -99,6 +137,12 @@ a, button {
     font-size:2.5px;
   }
 
+  .page-body
+  {
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+  }
   #gradient
   {
     width:50%;
@@ -214,6 +258,25 @@ a, button {
     background-size: 200%;
     background-position: center;
   }
+
+  .reviews-container {
+    display: flex;
+    height: 300px;
+    max-height: 400px;
+    padding: 20px;
+    flex-direction: column;
+    border-radius: 20px;
+    margin-right: 10%;
+    width: 55%;
+    height: 100%;
+    background-color: #141414;
+    overflow-y: auto; /* Add this line to enable vertical scrolling */
+  }
+  
+  .reviews-container h5
+  {
+    color: white;
+  }
   @media (max-width: 900px) {
     body #card-display .card-wrapper:hover {
         transform: scale(.85);
@@ -225,7 +288,26 @@ a, button {
       height: 400px;
       width: 400px;
     }
-
+    .logo
+    {
+        width: 10%;
+    }
+    .h1title  {
+      font-size: 1.5rem;
+      margin-top: 20%;
+    }
+    .gradient-text
+    {
+    width: 90%;
+    }
+    .h1title h5
+  {
+    font-size: 1rem;
+  }
+  .card-wrapper
+  {
+    margin: 0;
+  }
   }
 
   @media (max-width: 1700px) {
